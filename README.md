@@ -11,13 +11,26 @@ Code and datasets of our paper "SSEGCN: Syntactic and Semantic Enhanced Graph Co
 - cython==0.29.13
 - nltk==3.5
 
-To install requirements, run `pip install -r requirements.txt`.
+Install requirements:
+
+```bash
+pip install -r requirements.txt
+```
+
+or build with Docker:
+
+```bash
+docker build -t ssegcn:latest .
+docker run --gpus all -it --name ssegcn-container ssegcn:latest /bin/bash
+```
 
 ## Preparation
 
-1. Download and unzip GloVe vectors(`glove.840B.300d.zip`) from [https://nlp.stanford.edu/projects/glove/](https://nlp.stanford.edu/projects/glove/) and put it into  `SSEGCN/glove` directory.
+1. Download and unzip GloVe vectors(`glove.840B.300d.zip`) from [https://nlp.stanford.edu/projects/glove/](https://nlp.stanford.edu/projects/glove/) and put it into  `SSEGCN/glove` directory. (Skip this step if using the provided Dockerfile, which downloads it automatically.)
 
 2. Prepare dataset with:
+
+   change directory into `dataset` and run:
 
    `python preprocess_data.py`
 
@@ -34,4 +47,3 @@ To train the SSEGCN model, run:
 ## Credits
 
 The code and datasets in this repository are based on [DualGCN_ABSA](https://github.com/CCChenhao997/DualGCN-ABSA) .
-
