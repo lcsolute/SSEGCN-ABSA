@@ -257,7 +257,7 @@ class Instructor:
 def main():
     model_classes = {
         'ssegcn': SSEGCNClassifier,
-        'ssegcnbert': SSEGCNBertClassifier,
+        'ssegcn_bert': SSEGCNBertClassifier,
 
     }
     
@@ -279,7 +279,7 @@ def main():
     input_colses = {
  
         'ssegcn': ['text', 'aspect', 'pos', 'head', 'deprel', 'post', 'mask', 'length','short_mask'],
-        'ssegcnbert': ['text_bert_indices', 'bert_segments_ids', 'attention_mask', 'asp_start', 'asp_end', 'src_mask', 'aspect_mask','short_mask']
+        'ssegcn_bert': ['text_bert_indices', 'bert_segments_ids', 'attention_mask', 'asp_start', 'asp_end', 'src_mask', 'aspect_mask','short_mask']
     }
     
     initializers = {
